@@ -205,6 +205,8 @@ public class ZookeeperRegistry extends FailbackRegistry {
         if (!zkClient.exists(nodeTypePath)) {
             zkClient.createPersistent(nodeTypePath, true);
         }
+
+        
         zkClient.createEphemeral(toNodePath(url, nodeType), url.toFullStr());
     }
 
